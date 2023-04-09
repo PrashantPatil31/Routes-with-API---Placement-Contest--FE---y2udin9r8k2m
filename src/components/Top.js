@@ -3,6 +3,12 @@ import React, { useState, useEffect } from 'react';
 function Top() {
     const [cryptoArr, setCryptoArr] = useState([]);
 
+    const fetchData =()=>{
+        fetch("http://api.coinlore.net/api/tickers/").then(response =>{
+            return response.json();
+        })
+    }
+
     return (
         <div className='top-container'>
             <h1>Top 10 Global Crypto Coins</h1>
